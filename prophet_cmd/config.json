@@ -1,0 +1,17 @@
+{
+  "name": "Prophet API Add-on CMD",
+  "version": "1.0",
+  "slug": "prophet_api_cmd",
+  "description": "An API add-on for forecasting with Prophet - Development Version",
+  "arch": ["armhf", "armv7", "aarch64", "amd64"],
+  "startup": "services",
+  "boot": "auto",
+  "options": {},
+  "schema": {},
+  "image": "local/prophet-api-dev:latest",
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "host_network": false
+}
+
