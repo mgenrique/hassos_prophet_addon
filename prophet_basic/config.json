@@ -1,0 +1,16 @@
+{
+  "name": "Prophet API Add-on basic",
+  "version": "1.0",
+  "slug": "prophet_api",
+  "description": "An API add-on for 30 periods forecasting with Prophet",
+  "arch": ["armhf", "armv7", "aarch64", "amd64"],
+  "startup": "services",
+  "boot": "auto",
+  "options": {},
+  "schema": {},
+  "image": "mgenrique/prophet-api:latest",
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "host_network": false
+}
