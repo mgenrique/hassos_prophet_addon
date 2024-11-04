@@ -1,7 +1,7 @@
 {
   "name": "Prophet API Add-on basic",
   "version": "1.0",
-  "slug": "prophet_api",
+  "slug": "prophet_basic",
   "description": "An API add-on for 30 periods forecasting with Prophet",
   "arch": ["armhf", "armv7", "aarch64", "amd64"],
   "startup": "services",
