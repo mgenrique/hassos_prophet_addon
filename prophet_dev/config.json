@@ -8,7 +8,7 @@
   "boot": "auto",
   "options": {},
   "schema": {},
-  "image": "mgenrique/prophet-api:latest",
+  "image": "mgenrique/prophet-api",
   "ports": {
     "5000/tcp": 5000
   },
