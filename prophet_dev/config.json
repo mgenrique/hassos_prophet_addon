@@ -1,6 +1,6 @@
 {
     "name": "Prophet API Add-on development DEV",
-    "version": "1.0",
+    "version": "1.1",
     "slug": "prophet_dev",
     "description": "An API add-on for forecasting with Prophet",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
