@@ -1,6 +1,14 @@
 from flask import Flask, request, jsonify
 from prophet import Prophet
 import pandas as pd
+import logging
+
+# Configura el logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Mensajes de log
+logger.info("Starting Prophet API from dev_app.py...")
 
 app = Flask(__name__)
 
