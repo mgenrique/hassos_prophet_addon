@@ -1,18 +1,17 @@
 {
-  "name": "Prophet API Add-on development",
-  "version": "1.0",
-  "slug": "prophet_dev",
-  "description": "An API add-on for forecasting with Prophet",
-  "arch": ["armhf", "armv7", "aarch64", "amd64"],
-  "startup": "services",
-  "boot": "auto",
-  "options": {},
-  "schema": {},
-  "image": "mgenrique/prophet-api",
-  "ports": {
-    "5000/tcp": 5000
-  },
-  "host_network": false,
-  "command": "python /app/dev_app.py"
-}
+    "name": "Prophet API Add-on development DEV",
+    "version": "1.0",
+    "slug": "prophet_dev",
+    "description": "An API add-on for forecasting with Prophet",
+    "arch": ["armhf", "armv7", "aarch64", "amd64"],
+    "startup": "services",
+    "boot": "auto",
+    "options": {},
+    "schema": {},
+    "image": "mgenrique/prophet-api",
+    "ports": {
+      "5000/tcp": 5000
+    },
+    "host_network": false
+  }
 
