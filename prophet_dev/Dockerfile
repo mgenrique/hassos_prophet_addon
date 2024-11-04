@@ -1,4 +1,4 @@
-FROM mgenrique/prophet-api:latest
+FROM mgenrique/prophet-api
 
 # Crear el directorio /app si no existe
 RUN mkdir -p /app
