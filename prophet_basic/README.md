@@ -7,9 +7,6 @@ docker pull mgenrique/prophet-api:latest
 ````
 
 Container with python:3.11-slim for arm that implements an api to generate predictions with Prophet. 
-Here’s a possible description for your Docker Hub repository:
-
----
 
 ### Repository Description
 
@@ -28,8 +25,6 @@ This Docker container provides a lightweight REST API based on Flask for time se
 1. **Installation**: Pull the container from Docker Hub or clone the repository and build the image.
 2. **Requests**: Send data in JSON format to receive forecasts.
 3. **Integration with Home Assistant**: Ideal for generating real-time predictions within Home Assistant.
-
----
 
 ### Example
 
