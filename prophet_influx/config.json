@@ -8,7 +8,7 @@
     "boot": "auto",
     "options": {},
     "schema": {},
-    "image": "mgenrique/prophet_influx_app:1.0",
+    "image": "mgenrique/prophet_influx_app",
     "ports": {
       "5000/tcp": 5000
     },
