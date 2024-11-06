@@ -1,2 +1,0 @@
-FROM mgenrique/prophet_influx_app
-
