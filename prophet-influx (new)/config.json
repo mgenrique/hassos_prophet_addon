@@ -1,8 +1,8 @@
 {
-    "name": "Prophet Influx API",
+    "name": "Prophet Influx API (New)",
     "version": "1.0",
     "slug": "prophet-influx",
-    "description": "An API add-on for forecasting with Prophet and Influx",
+    "description": "An API add-on for forecasting with Prophet and Influx (New)",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
     "startup": "services",
     "boot": "auto",
