@@ -1,14 +1,14 @@
 {
     "name": "Prophet Influx API Add-on",
-    "version": "latest",
-    "slug": "prophet_influx",
+    "version": "1.0",
+    "slug": "prophet-influx",
     "description": "An API add-on for forecasting with Prophet and Influx",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
     "startup": "services",
     "boot": "auto",
     "options": {},
     "schema": {},
-    "image": "mgenrique/prophet_influx_app",
+    "image": "mgenrique/prophet-influx",
     "ports": {
       "5000/tcp": 5000
     },
