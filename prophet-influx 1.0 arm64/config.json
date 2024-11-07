@@ -4,7 +4,7 @@
     "slug": "prophet-influx",
     "description": "An API add-on for forecasting with Prophet and Influx (ARM64 version)",
     "arch": ["aarch64"],
-    "startup": "service",
+    "startup": "services",
     "boot": "auto",
     "options": {
         "influxdb_host": "localhost",
