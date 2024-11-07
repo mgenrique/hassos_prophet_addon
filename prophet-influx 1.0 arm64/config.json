@@ -1,6 +1,6 @@
 {
     "name": "Prophet Influx API (ARM64)",
-    "version": "1.0_arm64",
+    "version": "1.1_arm64",
     "slug": "prophet-influx-arm",
     "description": "An API add-on for forecasting with Prophet and Influx (ARM64 version)",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
