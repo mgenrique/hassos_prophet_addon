@@ -3,7 +3,6 @@
 # Mensaje de inicio
 echo "Iniciando el addon Prophet InfluxDB..."
 
-#!/bin/bash
 # Exporta las variables de entorno desde la configuración del addon
 export INFLUXDB_HOST=${INFLUXDB_HOST}
 export INFLUXDB_PORT=${INFLUXDB_PORT}
