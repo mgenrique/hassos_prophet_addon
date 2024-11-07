@@ -12,6 +12,7 @@ ENV PORT=${PORT}
 # Expone el puerto configurado para la API
 EXPOSE 5000
 
+# Copiar el script de ejecución
 COPY . .
 
 # Establece el comando por defecto para ejecutar tu aplicación
