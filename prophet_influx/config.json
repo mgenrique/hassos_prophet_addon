@@ -1,5 +1,5 @@
 {
-    "name": "Prophet Influx API Add-on",
+    "name": "Prophet Influx API Add-on (first)",
     "version": "1.0",
     "slug": "prophetinflux",
     "description": "An API add-on for forecasting with Prophet and Influx",
