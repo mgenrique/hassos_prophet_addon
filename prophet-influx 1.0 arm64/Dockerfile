@@ -12,5 +12,7 @@ ENV PORT=${PORT}
 # Expone el puerto configurado para la API
 EXPOSE 5000
 
-# Comando para ejecutar la aplicación en el contenedor
-CMD ["python", "/path/to/your/app.py"]  # Reemplaza con el comando adecuado para iniciar tu aplicación
+COPY . .
+
+# Establece el comando por defecto para ejecutar tu aplicación
+CMD ["python", "app/main.py"]
