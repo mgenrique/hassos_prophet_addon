@@ -1,5 +1,5 @@
 This addon install de Docker container in:
-https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general
+[https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general](https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general)
 
 if you need to pull it for other purposes you can do:
 ```bash
