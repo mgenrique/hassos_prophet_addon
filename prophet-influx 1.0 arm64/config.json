@@ -22,7 +22,7 @@
         "influxdb_dbname": "str",
         "port": "int"
     },
-    "image": "mgenrique/prophet-influx:1.0-arm64",
+    "image": "mgenrique/prophet-influx:1.0_arm64",
     "ports": {
         "5000/tcp": 5000
     },
