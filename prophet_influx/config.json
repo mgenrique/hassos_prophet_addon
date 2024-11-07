@@ -2,7 +2,7 @@
     "name": "Prophet Influx API Add-on (first)",
     "version": "1.0",
     "slug": "prophetinflux",
-    "description": "An API add-on for forecasting with Prophet and Influx",
+    "description": "An API add-on for forecasting with Prophet and Influx (first)",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
     "startup": "services",
     "boot": "auto",
