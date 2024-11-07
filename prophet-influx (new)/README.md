@@ -3,7 +3,7 @@ This addon install de Docker container in:
 
 if you need to pull it for other purposes you can do:
 ```bash
-docker pull mgenrique/prophet_influx_app:latest
+docker pull mgenrique/prophet_influx-app:latest
 ````
 
 Container with python:3.11-slim for arm that implements an api to generate predictions with Prophet. API designed to make a Home Assistant addon obtaining data from InfluxDB.
