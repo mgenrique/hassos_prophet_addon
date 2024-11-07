@@ -1,7 +1,7 @@
 {
     "name": "Prophet Influx API (New)",
     "version": "1.0",
-    "slug": "prophet-influx",
+    "slug": "prophet-influx-new",
     "description": "An API add-on for forecasting with Prophet and Influx (New)",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
     "startup": "services",
@@ -22,7 +22,7 @@
         "influxdb_dbname": "str",
         "port": "int"
     },
-    "image": "mgenrique/prophet-influx",
+    "image": "mgenrique/prophet-influx-new",
     "ports": {
         "5000/tcp": 5000
     },
