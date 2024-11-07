@@ -1,5 +1,5 @@
 # Usa la imagen base de Docker Hub
-FROM mgenrique/prophet-influx:1.0_arm64
+FROM mgenrique/prophet-influx:1.1_arm64
 
 # Añade las variables de entorno que se configurarán a través de los valores del archivo de opciones del add-on
 ENV INFLUXDB_HOST=${INFLUXDB_HOST}
