@@ -4,7 +4,7 @@
     "slug": "prophet-influx-arm",
     "description": "An API add-on for forecasting with Prophet and Influx (ARM64 version)",
     "arch": ["armhf", "armv7", "aarch64", "amd64"],
-    "startup": "services",
+    "startup": "application",
     "boot": "auto",
     "options": {
         "influxdb_host": "localhost",
@@ -27,12 +27,14 @@
         "5000/tcp": 5000
     },
     "host_network": false,
+  "map": {
     "environment": {
-      "INFLUXDB_HOST": "options.influxdb_host",
-      "INFLUXDB_PORT": "options.influxdb_port",
-      "INFLUXDB_USER": "options.influxdb_user",
-      "INFLUXDB_PASSWORD": "options.influxdb_password",
-      "INFLUXDB_DBNAME": "options.influxdb_dbname",
-      "PORT": "options.port"
-  }    
+      "INFLUXDB_HOST": "influxdb_host",
+      "INFLUXDB_PORT": "influxdb_port",
+      "INFLUXDB_USER": "influxdb_user",
+      "INFLUXDB_PASSWORD": "influxdb_password",
+      "INFLUXDB_DBNAME": "influxdb_dbname",
+      "PORT": "port"
+    }
+  }   
 }
