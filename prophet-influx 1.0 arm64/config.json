@@ -3,7 +3,7 @@
     "version": "1.0",
     "slug": "prophet-influx",
     "description": "An API add-on for forecasting with Prophet and Influx (ARM64 version)",
-    "arch": ["arm64"],
+    "arch": ["armhf", "armv7", "aarch64", "amd64"],
     "startup": "services",
     "boot": "auto",
     "options": {
