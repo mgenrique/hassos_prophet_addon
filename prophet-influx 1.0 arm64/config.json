@@ -27,14 +27,12 @@
         "5000/tcp": 5000
     },
     "host_network": false,
-  "map": {
     "environment": {
-      "INFLUXDB_HOST": "influxdb_host",
-      "INFLUXDB_PORT": "influxdb_port",
-      "INFLUXDB_USER": "influxdb_user",
-      "INFLUXDB_PASSWORD": "influxdb_password",
-      "INFLUXDB_DBNAME": "influxdb_dbname",
-      "PORT": "port"
-    }
-  }   
+      "INFLUXDB_HOST": "options.influxdb_host",
+      "INFLUXDB_PORT": "options.influxdb_port",
+      "INFLUXDB_USER": "options.influxdb_user",
+      "INFLUXDB_PASSWORD": "options.influxdb_password",
+      "INFLUXDB_DBNAME": "options.influxdb_dbname",
+      "PORT": "options.port"
+  }     
 }
