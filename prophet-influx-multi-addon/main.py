@@ -309,16 +309,6 @@ async def query(request: EnergyQueryRequest):
 
 if __name__ == '__main__':
     import uvicorn
-    # str_port=os.getenv("PORT", "5000")
-    # check if str_port is a number
-    if not PORT.isdigit():
-        logger.error("The PORT environment variable must be a number. Setting default port to 5000")
-        port = 5000
-    else:
-        port = int(PORT)
-    # str_env_var = os.getenv("INFLUXDB_DBNAME", "Variable de entorno no definida")
-
-    logger.info(f"Starting the FastAPI server on port {port}...")
-    # logger.info(f"Información de variables de entorno: {str_env_var}")
-    uvicorn.run(app, host='0.0.0.0', port=port)
+    logger.info(f"Starting the FastAPI server on port {PORT}...")
+    uvicorn.run(app, host='0.0.0.0', port=PORT)
     logger.info("FastAPI server started successfully.")    
