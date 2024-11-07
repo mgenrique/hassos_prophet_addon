@@ -3,7 +3,7 @@
   "version": "1.0",
   "slug": "prophet_influxdb_addon",
   "description": "Addon to run Prophet forecasting with InfluxDB data",
-  "arch": ["amd64", "arm64"],
+  "arch": ["amd64", "aarch64"],
   "startup": "services",
   "boot": "auto",
   "options": {
@@ -25,6 +25,5 @@
   "ports": {
     "5000/tcp": 5000
   },
-  "map": ["config:rw"],
-  "webui": "http://[HOST]:[PORT]"
+  "map": ["config:rw"]
 }
