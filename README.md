@@ -1,6 +1,8 @@
-This is an addons for Home Assistant allows to use Python `Prophet` library inside a container.
+This repository is structured to be used in the Home Assistant Addon Store repository list and is specifically designed for installing the **Prophet InfluxDB Addon**
 
-To do this, in the HA UI, go to `Settings` --> `Addons` --> `Addon Store`.
+An Addon for Home Assistant that allows forecasting future data using the Prophet library and can use InfluxDB data for model training.
+
+To use it, in the HA UI, go to `Settings` --> `Addons` --> `Addon Store`.
 
 In the button with the 3 dots, select `Repositories` and add the url: `https://github.com/mgenrique/hassos_prophet_addon`
 
