@@ -22,9 +22,6 @@ INFLUXDB_PORT = options.get("INFLUXDB_PORT", 8086)
 INFLUXDB_USER = options.get("INFLUXDB_USER", "user")
 INFLUXDB_PASSWORD = options.get("INFLUXDB_PASSWORD", "password")
 INFLUXDB_DBNAME = options.get("INFLUXDB_DBNAME", "database")
-PORT = options.get("PORT", 5000)
-logger.info(f"INFLUXDB_PASSWORD: {INFLUXDB_PASSWORD}")
-logger.info(f"PORT: {PORT}")
 
 app = FastAPI()
 
@@ -313,6 +310,6 @@ async def query(request: EnergyQueryRequest):
 
 if __name__ == '__main__':
     import uvicorn
-    logger.info(f"Starting the FastAPI server on port {PORT}...")
-    uvicorn.run(app, host='0.0.0.0', port=PORT)
+    logger.info(f"Starting the FastAPI server on port 5000...")
+    uvicorn.run(app, host='0.0.0.0', port=5000)
     logger.info("FastAPI server started successfully.")    
