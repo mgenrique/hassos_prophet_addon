@@ -12,7 +12,7 @@ docker buildx build --platform linux/amd64,linux/arm64 -t mgenrique/prophet-infl
 When the build is finished, the image is registered in Docker Hub at:
 https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general
 
-## General steps
+## General steps
 We will create a directory with the Dockerfile and run the entire process using the following lines, which once the creation of the multiplatform image is finished, will upload it to the Docker Hub repository where it will be publicly accessible.
 Once we have opened Docker Desktop in a terminal:
 ```bash
