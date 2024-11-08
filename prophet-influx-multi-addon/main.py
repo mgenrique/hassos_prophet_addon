@@ -9,7 +9,7 @@ import pandas as pd
 from influxdb import InfluxDBClient
 
 # Set logger
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # Cargar opciones de /data/options.json
@@ -23,6 +23,8 @@ INFLUXDB_USER = options.get("INFLUXDB_USER", "user")
 INFLUXDB_PASSWORD = options.get("INFLUXDB_PASSWORD", "password")
 INFLUXDB_DBNAME = options.get("INFLUXDB_DBNAME", "database")
 PORT = options.get("PORT", 5000)
+logger.info(f"INFLUXDB_PASSWORD: {INFLUXDB_PASSWORD}")
+logger.info(f"PORT: {PORT}")
 
 app = FastAPI()
 
