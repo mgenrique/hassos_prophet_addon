@@ -7,7 +7,7 @@
   "startup": "services",
   "boot": "auto",
   "options": {
-    "INFLUXDB_HOST": "localhost",
+    "INFLUXDB_HOST": "InfluxAddon host_name or external IP, examples: a0d7b954-influxdb or 192.168.0.100",
     "INFLUXDB_PORT": 8086,
     "INFLUXDB_USER": "homeassistant",
     "INFLUXDB_PASSWORD": "",
