@@ -30,6 +30,8 @@ It also uses the InfluxDB database that can be installed with the official Addon
 To date, this addon runs version 1.8 of Influx, so the recommended query format is InfluxQL.
 The use of Flux-type queries specific to InfluxDB V2 has not been tested, although it is possible to use them in the Chronograph interface of the Addon. InfluxDB 2's token-based authentication processes are not supported.
 
+The plugin can work without problems even if InfluxDB is not installed. In this case, only the forecast endpoint can be used by sending the data for training in json format as can be seen in the examples.
+
 ## Features
 - **REST API**: Receives JSON-formatted data and returns predictions in JSON.
 - **Prophet Model**: Utilizes Prophet, a robust and accurate time series model, ideal for trend and seasonality-based data.
