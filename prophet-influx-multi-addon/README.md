@@ -23,8 +23,12 @@ https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general
 
 A Docker image based on python:3.11-slim that contains precompiled libraries necessary to use Prophet in Python and connect to the InfluxDB client.
 
-The Add-on build a lightweight Docker container based in that image and implements a REST API based on FastAPI for time series forecasting using Meta's (formerly Facebook) Prophet model, enabling easy forecasting based on historical data.
-Ideal for generating real-time predictions within Home Assistant. Use it inside your Python code in you own custom component
+The Add-on build a lightweight Docker container based in that image and implements a REST API based on FastAPI for time series forecasting using Meta's (formerly Facebook) Prophet model, enabling easy forecasting based on historical data. [Prophet](https://facebook.github.io/prophet/).
+Ideal for generating real-time predictions within Home Assistant. Use it inside your Python code in you own custom component.
+
+It also uses the InfluxDB database that can be installed with the official Addon at [InfluxDB addon](https://github.com/hassio-addons/addon-influxdb)
+To date, this addon runs version 1.8 of Influx, so the recommended query format is InfluxQL.
+The use of Flux-type queries specific to InfluxDB V2 has not been tested, although it is possible to use them in the Chronograph interface of the Addon. InfluxDB 2's token-based authentication processes are not supported.
 
 ## Features
 - **REST API**: Receives JSON-formatted data and returns predictions in JSON.
