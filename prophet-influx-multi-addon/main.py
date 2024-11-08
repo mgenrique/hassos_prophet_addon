@@ -1,5 +1,4 @@
 import logging
-import json
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -12,19 +11,6 @@ from influxdb import InfluxDBClient
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Cargar opciones de /data/options.json
-with open('/data/options.json') as f:
-    options = json.load(f)
-
-# Configuraciones cargadas de options.json
-INFLUXDB_HOST = options.get("influxdb_host", "localhost")
-INFLUXDB_PORT = options.get("influxdb_port", 8086)
-INFLUXDB_USER = options.get("influxdb_user", "user")
-INFLUXDB_PASSWORD = options.get("influxdb_password", "password")
-INFLUXDB_DBNAME = options.get("influxdb_dbname", "database")
-PORT = options.get("port", 5000)
-
-
 app = FastAPI()
 
 class ForecastRequest(BaseModel):
@@ -34,22 +20,22 @@ class ForecastRequest(BaseModel):
 
 class QueryRequest(BaseModel):
     str_query: str
-    influx_host: str = INFLUXDB_HOST # os.getenv("INFLUXDB_HOST", "localhost")
-    influx_port: int = int(INFLUXDB_PORT) # int(os.getenv("INFLUXDB_PORT", 8086))
-    influx_user: str = INFLUXDB_USER # os.getenv("INFLUXDB_USER", "homeassistant")
-    influx_password: str = INFLUXDB_PASSWORD # os.getenv("INFLUXDB_PASSWORD", "")
-    influx_dbname: str = INFLUXDB_DBNAME # os.getenv("INFLUXDB_DBNAME", "homeassistant")
+    influx_host: str = os.getenv("INFLUXDB_HOST", "localhost")
+    influx_port: int = int(os.getenv("INFLUXDB_PORT", 8086))
+    influx_user: str = os.getenv("INFLUXDB_USER", "homeassistant")
+    influx_password: str = os.getenv("INFLUXDB_PASSWORD", "")
+    influx_dbname: str = os.getenv("INFLUXDB_DBNAME", "homeassistant")
     futurePeriods: int = 30
     futureFreq: str = "h"
 
 class EnergyQueryRequest(BaseModel):
     str_query1: str
     str_query2: str = None
-    influx_host: str = INFLUXDB_HOST # os.getenv("INFLUXDB_HOST", "localhost")
-    influx_port: int = int(INFLUXDB_PORT) # int(os.getenv("INFLUXDB_PORT", 8086))
-    influx_user: str = INFLUXDB_USER # os.getenv("INFLUXDB_USER", "homeassistant")
-    influx_password: str = INFLUXDB_PASSWORD # os.getenv("INFLUXDB_PASSWORD", "")
-    influx_dbname: str = INFLUXDB_DBNAME # os.getenv("INFLUXDB_DBNAME", "homeassistant")
+    influx_host: str = os.getenv("INFLUXDB_HOST", "localhost")
+    influx_port: int = int(os.getenv("INFLUXDB_PORT", 8086))
+    influx_user: str = os.getenv("INFLUXDB_USER", "homeassistant")
+    influx_password: str = os.getenv("INFLUXDB_PASSWORD", "")
+    influx_dbname: str = os.getenv("INFLUXDB_DBNAME", "homeassistant")
     futurePeriods: int = 30
     futureFreq: str = "h"
 
@@ -306,9 +292,18 @@ async def query(request: EnergyQueryRequest):
         logger.error(f"Error processing Prophet model: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-
 if __name__ == '__main__':
     import uvicorn
-    logger.info(f"Starting the FastAPI server on port {PORT}...")
-    uvicorn.run(app, host='0.0.0.0', port=PORT)
+    str_port=os.getenv("PORT", "5000")
+    # check if str_port is a number
+    if not str_port.isdigit():
+        logger.error("The PORT environment variable must be a number. Setting default port to 5000")
+        port = 5000
+    else:
+        port = int(str_port)
+    str_env_var = os.getenv("INFLUXDB_DBNAME", "Variable de entorno no definida")
+
+    logger.info(f"Starting the FastAPI server on port {port}...")
+    logger.info(f"Información de variables de entorno: {str_env_var}")
+    uvicorn.run(app, host='0.0.0.0', port=port)
     logger.info("FastAPI server started successfully.")    
