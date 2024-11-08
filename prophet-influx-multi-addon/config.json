@@ -11,16 +11,14 @@
     "INFLUXDB_PORT": 8086,
     "INFLUXDB_USER": "homeassistant",
     "INFLUXDB_PASSWORD": "",
-    "INFLUXDB_DBNAME": "homeassistant",
-    "PORT": 5000
+    "INFLUXDB_DBNAME": "homeassistant"
   },
   "schema": {
     "INFLUXDB_HOST": "str",
     "INFLUXDB_PORT": "int",
     "INFLUXDB_USER": "str",
     "INFLUXDB_PASSWORD": "str",
-    "INFLUXDB_DBNAME": "str",
-    "PORT": "int"
+    "INFLUXDB_DBNAME": "str"
   },
   "ports": {
     "5000/tcp": 5000
