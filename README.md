@@ -8,6 +8,11 @@ In the button with the 3 dots, select `Repositories` and add the url: `https://g
 
 This will make the addon appear in the UI under HassOS Prophet Addons and you can install it.
 
+The folder required for installing the addon is `prophet-influx-multi-addon`
+
+The `prophet-influx-multi` folder contains information for the process of creating the Docker image that serves as the basis for the addon
+
+The `test` folder contains sample Python scripts for testing the addon after installation.
 
 This addon has been created as a solution to the installation limitations of the custom component [ESS Controller](https://github.com/mgenrique/ESS_ControllerHA) in Home Assistant OS.
 
