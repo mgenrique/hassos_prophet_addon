@@ -103,6 +103,9 @@ async def query(request: QueryRequest):
     dbname = request.influx_dbname
     futurePeriods = request.futurePeriods
     futureFreq = request.futureFreq
+
+    logger.info(f"INFLUXDB_PASSWORD: {INFLUXDB_PASSWORD}")
+    logger.info(f"password: {password}")
     try:
         # Connect to InfluxDB
         logger.info(f"Executing query: {str_query}")
