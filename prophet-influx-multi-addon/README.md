@@ -1,6 +1,11 @@
 # Prophet InfluxDB Addon
 
 This addon allows running a forecasting script using Prophet and data from InfluxDB.
+This addon has been created as a solution to the installation limitations of the custom component [ESS Controller](https://github.com/mgenrique/ESS_ControllerHA) in Home Assistant OS.
+
+The Home Assistant Core container in Home Assistant OS is based on a minimal operating system image based on the Alpine Linux distribution. It is a distribution known for being lightweight, secure, and fast. It is specifically designed for containerized environments, such as Docker, as it is small in size and consumes few resources. However, this is where the limitation comes in that we cannot run Prophet directly in the container that runs Home Assistant core.
+Prophet requires specific libraries and dependencies such as pystan and gcc to compile C++ code. Alpine Linux uses musl libc instead of glibc, which is the cause of incompatibilities in many Python libraries, including Prophet, which depend on glibc to properly run the compiler and underlying libraries. Including Prophet in this container would significantly increase its size and complexity, as well as potentially cause compatibility issues in future Home Assistant OS updates.
+Therefore this plugin has been created to allow the use of Prophet within the Home Assistant environment.
 
 ## Configuration
 
@@ -12,33 +17,26 @@ You can configure the following options from the Home Assistant UI:
 - `INFLUXDB_PASSWORD`: InfluxDB password
 - `INFLUXDB_DBNAME`: InfluxDB database name
 
+## Description
 This addon use the Docker image in:
 https://hub.docker.com/repository/docker/mgenrique/prophet-influx/general
 
-The addon build a Docker container with python:3.11-slim that implements an api to generate predictions with Prophet. 
+A Docker image based on python:3.11-slim that contains precompiled libraries necessary to use Prophet in Python and connect to the InfluxDB client.
 
-## Repository Description
-
-**Prophet API Add-on for Home Assistant**  
-This Docker container provides a lightweight REST API based on Flask for time series forecasting using Meta's (formerly Facebook) Prophet model. It is specifically designed to integrate as an add-on in Home Assistant, enabling easy forecasting based on historical data.
+The Add-on build a a lightweight Docker container based in that image and implements a REST API based on FastAPI for time series forecasting using Meta's (formerly Facebook) Prophet model, enabling easy forecasting based on historical data.
+Ideal for generating real-time predictions within Home Assistant. Use it inside your Python code in you own custom component
 
 ## Features
-
 - **REST API**: Receives JSON-formatted data and returns predictions in JSON.
 - **Prophet Model**: Utilizes Prophet, a robust and accurate time series model, ideal for trend and seasonality-based data.
 - **ISO Date Format**: Returns dates in ISO format to ensure compatibility.
 
 ## Usage
-
 1. **Requests endpoint /forecast**: Send data in JSON format to receive forecasts.
-2. **Requests endpoint /query**: Send InfluxQL queries to receive forecasts.
+2. **Requests endpoint /query**: Send InfluxQL query to receive forecasts.
 3. **Requests endpoint /energy_queries**: special endpoint to send InfluxQL energy queries to receive forecast.
-4. **Integration with Home Assistant**: Ideal for generating real-time predictions within Home Assistant.
-5. Use it inside your Python code in you own custom component
-
 
 ### Basic example endpoint `forecast`
-
 Send a POST request to the API `forecast` endpoint with date and value data in the following format:
 ```bash
 curl -X POST "http://localhost:5000/forecast" -H "Content-Type: application/json" -d 'json_string'
@@ -77,7 +75,6 @@ The API will return a forecast of future values.
 If `numPeriods` is not specified, it returns the forecast for 30 periods.
 
 #### Example endpoint `query`
-
 Send a POST request to the API `query` endpoint with a InfluxDB InfluxQL query (parameters for InfluxDB are not needed if they are set in the UI):
 ```bash
 curl -X POST "http://localhost:5000/query" -H "Content-Type: application/json" -d 'json_string'
@@ -115,7 +112,8 @@ The API will return a forecast of future values training Prophet with the Influx
 If `numPeriods` is not specified, it returns the forecast for 30 periods.
 
 ## All in one test example
-Test code
+The following test code makes use of the 3 endpoints consecutively
+Configure base_url to then url of your Home Assistant if you test it outside the HA machine.
 ```python
 import requests
 from datetime import datetime, timedelta
@@ -124,7 +122,7 @@ import pytz
 
 influx_pass="your_influx_pass"
 
-# Container-API URL base
+# Container-API-Addon URL base
 base_url = "http://localhost:5000"
 
 # Sample data endpoint /forecast
