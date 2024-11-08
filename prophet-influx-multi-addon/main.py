@@ -17,7 +17,7 @@ with open('/data/options.json') as f:
     options = json.load(f)
 
 # Configuraciones cargadas de options.json
-INFLUXDB_HOST = options.get("INFLUXDB_HOST", "192.168.0.100")
+INFLUXDB_HOST = options.get("INFLUXDB_HOST", "IP_Influx")
 INFLUXDB_PORT = options.get("INFLUXDB_PORT", 8086)
 INFLUXDB_USER = options.get("INFLUXDB_USER", "user")
 INFLUXDB_PASSWORD = options.get("INFLUXDB_PASSWORD", "password")
