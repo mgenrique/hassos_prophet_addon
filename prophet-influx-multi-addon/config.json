@@ -21,5 +21,9 @@
     "INFLUXDB_PASSWORD": "str",
     "INFLUXDB_DBNAME": "str",
     "PORT": "int"
-  }
+  },
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "map": ["config:rw"]  
 }
