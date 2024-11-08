@@ -1,4 +1,4 @@
-This repository is structured to be used in the Home Assistant Addon Store repository list and is specifically designed for installing the **Prophet InfluxDB Addon**
+This repository is structured to be used in the Home Assistant Addon Store repository list, and is specifically designed for installing the **Prophet InfluxDB Addon**
 
 An Addon for Home Assistant that allows forecasting future data using the Prophet library and can use InfluxDB data for model training.
 
