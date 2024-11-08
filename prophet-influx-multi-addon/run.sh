@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# Mensaje de inicio
-echo "Iniciando el addon Prophet InfluxDB..."
+echo "Starting addon Prophet InfluxDB..."
 
-# Ejecuta la aplicación principal
+# Execute main application
 exec python /app/main.py
 
-# Mensaje de finalización
-echo "El addon Prophet InfluxDB ha terminado."
+echo "Addon Prophet InfluxDB finished."
