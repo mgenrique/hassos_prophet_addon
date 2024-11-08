@@ -22,8 +22,12 @@
     "INFLUXDB_DBNAME": "str",
     "PORT": "int"
   },
-  "ports": {
-    "5000/tcp": 5000
-  },
-  "map": ["config:rw"]
+  "environment": {
+    "INFLUXDB_HOST": "!!options.influxdb_host",
+    "INFLUXDB_PORT": "!!options.influxdb_port",
+    "INFLUXDB_USER": "!!options.influxdb_user",
+    "INFLUXDB_PASSWORD": "!!options.influxdb_password",
+    "INFLUXDB_DBNAME": "!!options.influxdb_dbname",
+    "PORT": "!!options.port"
+  }
 }
