@@ -9,5 +9,7 @@ COPY run.sh /app/run.sh
 # Da permisos de ejecución al script de arranque
 RUN chmod +x /app/run.sh
 
+WORKDIR /data
+
 # Comando de arranque
 CMD ["/app/run.sh"]
